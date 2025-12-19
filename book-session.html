@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Session</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">THE 🧠 Mental Health Support Platform</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Mood Check</a></li>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Settings ⚙️</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Book a Session</h1>
+    <p style="font-size:18px;margin-top:10px;">Choose a Date and Time that works for you.</p>
+</section>
+
+<section class="content">
+    <div class="calendar" style="margin:auto;max-width:400px;">
+        <h2>Schedule Your Session</h2>
+        <p>Select an available slot:</p>
+        <div class="doc-grid">
+    <div id="day" data-day="Monday">Monday</div>
+    <div id="day" data-day="Tuesday">Tuesday</div>
+    <div id="day" data-day="Wednesday">Wednesday</div>
+    <div id="day" data-day="Thursday">Thursday</div>
+    <div id="day" data-day="Friday">Friday</div>
+    <div id="day" data-day="Saturday">Saturday</div>
+        </div>
+    </div>
+</section>
+<script>
+let bookedDay = null;
+
+document.addEventListener("click", function (e) {
+    const day = e.target.textContent.trim();
+
+    // valid days
+    const days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    if (days.includes(day)) {
+
+        if (bookedDay === day) {
+            alert("You have already booked " + day);
+            return;
+        }
+
+        if (bookedDay === null) {
+            bookedDay = day;
+            alert("You have booked " + day);
+        } else {
+            alert("You already booked " + bookedDay);
+        }
+    }
+});
+</script>
+<footer class="stick-footer">
+      © 2025 Your Website | All Rights Reserved
+    </footer>
+
+</body>
+</html>

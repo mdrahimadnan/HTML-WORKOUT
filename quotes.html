@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Quotes</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f8f1;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .quote-box {
+        background: #8fbc6b;
+        padding: 25px;
+        border-radius: 15px;
+        width: 350px;
+        text-align: center;
+        color: white;
+        box-shadow: 0px 5px 18px rgba(223, 217, 217, 0.2);
+        
+     
+    }
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background: #4b6331;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #3c5127;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="quote-box">
+    <h2>Random Quote</h2>
+    <p id="quoteText">Click the button to get a quote ✨</p>
+    <button onclick="generateQuote()">New Quote</button>
+</div>
+
+<script>
+const quotes = [
+    "You are stronger than you think.",
+    "Every day is a new beginning.",
+    "Your only limit is your mind.",
+    "Be kind to yourself, you are trying.",
+    "Small steps every day matter.",
+    "Peace begins the moment you choose it.",
+    "You grow through what you go through.",
+    "Healing is not linear ― take your time.",
+    "Believe in your comeback more than your setback.",
+    "Your mental health matters more than anything."
+];
+
+function generateQuote() {
+    let randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quoteText").innerText = quotes[randomIndex];
+}
+</script>
+
+</body>
+
+</html>

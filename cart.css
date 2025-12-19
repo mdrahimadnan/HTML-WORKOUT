@@ -1,0 +1,83 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #1a1a1a;
+}
+
+/*  Header / Navbar  */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(247, 243, 243);
+  padding: 15px 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #1a3e24;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: #ccc;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #1a3e24;
+}
+
+.cart-container{
+    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color:#7bb661;
+  text-align: center;
+  margin: 70px auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(23, 21, 21, 0.15);
+  transition: 0.3s ease;
+  width: 350px;
+}
+.checkout-btn{
+    padding: 10px 20px;
+    color: #2e7d32;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    width: fit-content;              
+    transition: transform 0.2s ease
+
+}
+.stick-footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#7bb661;
+  color:#fff;
+  text-align:center;
+  padding:10px 0;
+  font-family:Arial;
+  font-size:14px;
+  z-index:999;
+}
