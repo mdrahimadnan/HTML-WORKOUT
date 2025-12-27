@@ -33,12 +33,12 @@
     </section>
 <!---->
     <section class="quick-links">
-        <div class="link-item"> Therapy session</div>
-        <div class="link-item"> Payment</div>
-        <div class="link-item"> Book session</div>
-        <div class="link-item">  Games</div>
-        <div class="link-item"> Toys</div>
-        <div class="link-item"> bad habbits </div>
+<a href="book-session.html" class="link-item">Therapy session</a>
+ <a href="cart.html" class="link-item">Payment</a>
+ <a href="book-session.html" class="link-item">Book session</a>
+ <a href="bubble.html" class="link-item">Games</a>
+ <a href="bubble.html" class="link-item">Toys</a>
+ <a href="#" class="link-item">bad habits</a>
     </section>
     <!--calender-->
     <section class="content">
@@ -206,23 +206,10 @@
     });
 
 
-<script>
-  // Make links open websites in a popup
-  document.querySelectorAll('a, .link-item').forEach(element => {
-    element.style.cursor = 'pointer';
-    element.addEventListener('click', function(e) {
-      e.preventDefault();
-      let url = prompt('Enter website URL to open:', 'https://www.google.com');
-      if (url) {
-        if (!url.startsWith('http')) url = 'https://' + url;
-        window.open(url, 'popup', 'width=1000,height=700,scrollbars=yes');
-      }
-    });
-  });
-</script>
 </body>
 
 </html>
+
 
 
 
