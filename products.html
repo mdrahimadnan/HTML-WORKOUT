@@ -1,79 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP</title>
-    <link rel="stylesheet" href="products.css">
-
+  <meta charset="UTF-8">
+  <title>Wellness Shop</title>
+  <link rel="stylesheet" href="products.css">
 </head>
 <body>
-    <header>
-      <div class="logo">THE  🧠 Mental Health Support Platform </div>
-        <nav>
-        <ul>
-            <li><a href="homepage.html">Home</a></li> 
-             <li><a href="#">Mood Check</a></li>
-              <li><a href="cart.html">Cart</a></li>
-               <li><a href="#"> Contact</a></li>
-                <li><a href="#">Settings⚙️</a></li>
-                </ul>
-                </nav>
-     </header>
-  
-  <section class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1514435542839-ed9380d2e9f6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1461" alt="Fidget Spinner">
-      <h3>Fidget Spinner</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Fidget Spinner', 50)">Add To Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1762613875432-1b80b1682905?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735" alt="Stress Ball">
-      <h3>Stress Ball</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Stress Ball', 50)">Add To Cart</button>
-    </div>
-   <div class="product">
-      <img src="https://images.pexels.com/photos/1751634/pexels-photo-1751634.jpeg?_gl=1*6loftd*_ga*MTUxODE0ODA2LjE3NjI4NjcxMjE.*_ga_8JE65Q40S6*czE3NjI4NjcxMjAkbzEkZzEkdDE3NjI4NjcxMzckajQzJGwwJGgw" alt="Rubix Cube">
-      <h3>Rubix Cube</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Rubix Cube', 50)">Add To Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://images.pexels.com/photos/13417045/pexels-photo-13417045.jpeg?_gl=1*tew6mm*_ga*MTUxODE0ODA2LjE3NjI4NjcxMjE.*_ga_8JE65Q40S6*czE3NjI4NjcxMjAkbzEkZzEkdDE3NjI4NjcyMTIkajQxJGwwJGgw" alt="Pop It Toy">
-      <h3>Pop It Toy</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Pop It Toy', 50)">Add To Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/N6kbGnh9/Screenshot-2025-11-11-185441.png" alt="Infinity Cube">
-      <h3>Infinity Cube</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Infinity Cube', 50)">Add To Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/1GcX5Dgv/Screenshot-2025-11-11-190114.png" alt="Magnetic Balls">
-      <h3>Magnetic Balls</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Magnetic Balls', 50)">Add To Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/XQDR1r4/Screenshot-2025-11-11-190248.png" alt="Squishy Toy">
-      <h3>Squishy Toy</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Squishy Toy', 50)">Add To Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://i.ibb.co/27gGFv5y/Screenshot-2025-11-11-190415.png" alt="Sensory Bottle">
-      <h3>Sensory Bottle</h3>
-      <p>$50</p>
-      <button onclick="addtocart('Sensory Bottle', 50)">Add To Cart</button>
-    </div>
-  </section>
- <script src="script.js"></script>
- <footer class="stick-footer">
-  © 2025 Your Website | All Rights Reserved
-</footer>
+
+<header>
+  <div class="logo">THE 🧠 Mental Health Support Platform</div>
+  <nav>
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="shop-header">
+  <h1>Wellness Store</h1>
+  <p>Tools designed to reduce stress and improve focus 🌿</p>
+</section>
+
+<section class="shop-controls">
+  <input type="text" id="search" placeholder="Search products...">
+  <select id="category">
+    <option value="all">All Categories</option>
+    <option value="Stress Relief">Stress Relief</option>
+    <option value="Focus">Focus</option>
+    <option value="Calming">Calming</option>
+    <option value="Anxiety">Anxiety</option>
+  </select>
+</section>
+
+<section class="products" id="product-list"></section>
+
+<script src="script.js"></script>
 </body>
 </html>
