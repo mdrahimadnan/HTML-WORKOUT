@@ -2,36 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart</title>
+  <title>Cart & Checkout</title>
   <link rel="stylesheet" href="cart.css">
 </head>
 <body>
- <header>
-      <div class="logo">THE  🧠 Mental Health Support Platform </div>
-        <nav>
-        <ul>
-            <li><a href="homepage.html">Home</a></li> 
-             <li><a href="#">Mood Check</a></li>
-                <li><a href="cart.html">Cart</a></li>
-               <li><a href="#"> Contact</a></li>
-                <li><a href="#">Settings⚙️</a></li>
-                </ul>
-                </nav>
-     </header>
-  <section class="cart-container">
-    <h2>Items Added</h2>
-    <div id="cart-items"></div>
-    <h3 id="total">total: $0.00</h3>
-    <button id="checkout-btn">Checkout</button>
-  </section>
 
-  <script src="script.js"></script>
-  <script>
-    showCart();
-  </script>
+<header>
+  <div class="logo">THE 🧠 Mental Health Support Platform</div>
+</header>
+
+<section class="cart-container">
+
+  <!-- CART VIEW -->
+  <div id="cart-view">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="total">Total: ₹0</h3>
+    <button onclick="openCheckout()">Proceed to Checkout</button>
+  </div>
+
+  <!-- CHECKOUT VIEW -->
+  <div id="checkout-view" style="display:none;">
+    <h2>Checkout</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="text" id="address" placeholder="Address">
+    <input type="text" id="payment" placeholder="Payment Method (UPI / Card)">
+
+    <h3 id="checkout-total"></h3>
+
+    <button onclick="placeOrder()">Place Order</button>
+    <button class="secondary" onclick="goBack()">Back to Cart</button>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+<script>
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = 0;
+
+  const box = document.getElementById("cart-items");
+  box.innerHTML = "";
+
+  cartItems.forEach(i => {
+    box.innerHTML += `<p>${i.name} - ₹${i.price}</p>`;
+    total += i.price;
+  });
+
+  document.getElementById("total").innerText = "Total: ₹" + total;
+  document.getElementById("checkout-total").innerText = "Payable Amount: ₹" + total;
+
+  function openCheckout() {
+    if (cartItems.length === 0) {
+      alert("Cart is empty");
+      return;
+    }
+    document.getElementById("cart-view").style.display = "none";
+    document.getElementById("checkout-view").style.display = "block";
+  }
+
+  function goBack() {
+    document.getElementById("checkout-view").style.display = "none";
+    document.getElementById("cart-view").style.display = "block";
+  }
+
+  function placeOrder() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const payment = document.getElementById("payment").value;
+
+    if (!name || !address || !payment) {
+      alert("Please fill all details");
+      return;
+    }
+
+    alert("Order placed successfully!\nThank you for taking care of your mental wellness 💚");
+
+    localStorage.removeItem("cart");
+    window.location.href = "homepage.html";
+  }
+</script>
+
 </body>
-<footer class="stick-footer">
-  © 2025 Your Website | All Rights Reserved
-</footer>
 </html>
